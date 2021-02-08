@@ -33,14 +33,11 @@ public class StoreManager {
 		Product product = context.getApplication().evaluateExpressionGet(context, "#{product}", Product.class);
 		if(product.getProductName() == null || product.getProductName() == "") {
 			check = true;
-			System.out.println("FAIL@@!!!!");
 		}
 		if (product.getProductCost() == 0) {
-			System.out.println("FAIL@@!!!!");
 			check = true;
 		}
 		if (product.getProductDiscription() == "" || product.getProductDiscription() == null) {
-			System.out.println("FAIL@@!!!!");
 			check = true;
 		}
 		if (product.getImageUrl() == null) {
