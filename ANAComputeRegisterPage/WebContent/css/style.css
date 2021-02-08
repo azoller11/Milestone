@@ -1,0 +1,211 @@
+@charset "ISO-8859-1";
+@font-face{
+	 font-family: aquire;
+	 src: url("Aquire-BW0ox.otf");
+}
+
+
+.commonButton {
+	
+}
+
+.order-table{   
+    border-collapse:collapse;
+}
+
+.order-table-header{
+    text-align:center;
+    background:none repeat scroll 0 0 #E5E5E5;
+    border-bottom:1px solid #BBBBBB;
+    padding:16px;
+}
+
+.order-table-odd-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.order-table-even-row{
+    text-align:center;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top:1px solid #BBBBBB;
+}
+.navigation{
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	font-family: aquire;
+	margin:20;
+	padding: 10;
+	box-sizing: border-box;
+	font-family: aquire;
+	white-space: nowrap;
+}
+nav.navigation{
+	flex: 1;
+	text-align: center;
+	white-space: nowrap;
+}
+nav ul{
+	display: inline-block;
+	list-style-type: none;
+}
+nav ul li{
+	display: inline-block;
+	margin-right: 10px;
+	padding: 20px;
+}
+a{
+	text-decoration: none;
+	font-size: 30px;
+}
+a:hover {
+  background-color: #000;
+  color: lightgrey;
+}
+.col1 {
+  float: right;
+  width: 25%;
+  white-space: nowrap;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+body {
+	margin: 0;
+	font-family: Helvetica;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.searchHeader {
+	white-space: nowrap;
+	top: 18%;
+  	text-align: center;
+}
+
+.loginHeader {
+	white-space: nowrap;
+	position: absolute;
+	top: 01%;
+  	left: 70%;
+}
+
+.noWrap {
+	white-space: nowrap;
+	position: absolute;
+	top: 170px;
+  	left: 10%;
+}
+
+.bottom {
+	white-space: nowrap;
+	top: 100%;
+  	left: 00%;
+}
+
+.some_class {
+	height: 75px;
+	width: 250px;
+	background-image: url('ANACompute.png');
+	background-color: rgba(0, 0, 0, 0.0); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: none;
+	float: middle;
+	white-space: nowrap;
+	padding: 6px 8px;
+	margin: 10px;
+}
+
+ul#list-nav {
+	list-style: none;
+	margin: 20px;
+	padding: 0;
+	width: 525px
+}
+
+ul#list-nav li {
+	display: inline
+}
+
+ul#list-nav li a {
+	white-space: nowrap;
+	text-decoration: none;
+	padding: 5px 0;
+	width: 100px;
+	background: #485e49;
+	color: #eee;
+	float: left;
+	text-align: center;
+	border-left: 1px solid #fff;
+}
+
+ul#list-nav li a:hover {
+	background: #a2b3a1;
+	color: #000
+}
+
+.topnav {
+	overflow: hidden;
+}
+
+.topnav a {
+	float: left;
+	color: Black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 50px;
+}
+
+.topnav a:hover {
+	text-shadow: 4px 4px 5px DodgerBlue;
+}
+
+.topnav a.active {
+	
+}
+
+form.searchSubmit {
+	float: right;
+	padding: 14px;
+}
+
+table {
+	overflow: auto;
+	display: block;
+	margin: auto;
+	width: 80%;
+	border-radius: 5px;
+	padding: 10px;
+	border-collapse: separate;
+	top: 180px;
+}

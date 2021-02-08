@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+
+
+
+	<body>
+	<h:commandButton
+				action="#{navigationController.onSubmit('Home.xhtml')}"
+				class="some_class" />
+		<div class="navigation">
+			<nav>
+			<ul>
+				<li><a href="#{navigationController.onSubmit('Home.xhtml')}">Home</a></li>
+				<li><a href="Login.xhtml">Login</a></li>
+				<li><a href="CreateAccount.xhtml">Register</a></li>
+				<li><a href="#">Products</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			</nav>
+			<div class="loginHeader">
+				<font color="black">
+					#{navigationController.loggedName}</font>
+			</div>
+		</div>
+		
+	</body>
+
+
+</ui:composition>
+
+
+
+</html>

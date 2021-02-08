@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<head>
+<title><ui:insert name="PageTitle">Page Title</ui:insert></title>
+
+</head>
+
+
+
+<body>
+	<ui:composition template="/layouts/commonLayouts.xhtml">
+	
+	<ui:define name="content">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<h:form class="noWrap">
+		<p>First Name: #{user.firstName}</p>
+		<p>Last Name: #{user.lastName}</p>
+		<p>Email: #{user.email}</p>
+		<p>Address: #{user.address}</p>
+		<p>Phone Number: #{user.phoneNumber}</p>
+		<p>Username: #{user.username}</p>
+		<p>Password: #{user.password}</p>
+		<h:commandButton action="CreateAccount.xhtml"
+			value="Back" />
+		<h:commandButton action="#{registerConfirmController.onSubmit()}"
+			value="Submit" />
+		<h:messages />
+
+	</h:form>
+		</ui:define>
+
+
+	</ui:composition>
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

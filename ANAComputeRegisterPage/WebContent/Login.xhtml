@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<body>
+	<ui:composition template="/layouts/commonLayouts.xhtml">
+		
+		<ui:define name="content">
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		
+		<h:form class="noWrap">
+		<center>
+			<p>
+				Username:
+				<h:inputText value="#{user.username}" />
+			</p>
+			<p>
+				Password:
+				<h:inputSecret value="#{user.password}" />
+			</p>
+			
+			<h:commandButton action="#{loginController.onSubmit()}"
+					value="Login" />
+			<h:commandButton action="CreateAccount.xhtml"
+					value="Register" />
+					</center>
+		</h:form>
+		
+		</ui:define>
+	</ui:composition>
+</body>
+
+
+
+<ui:define name="footer">This is the override footer</ui:define>
+
+
+
+</html>

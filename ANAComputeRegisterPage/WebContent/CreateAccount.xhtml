@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<body>
+<ui:composition template="/layouts/commonLayouts.xhtml">
+	<ui:define name="content">
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+			<h:form class="noWrap">
+			<p>
+				First Name:
+				<h:inputText value="#{user.firstName}" />
+				<font color = "red">#{formController.user.firstName}</font>
+			</p>
+			<p>
+				Last Name:
+				<h:inputText value="#{user.lastName}" />
+				<font color = "red">#{formController.user.lastName}</font>
+			</p>
+			<p>
+				Email:
+				<h:inputText value="#{user.email}" />
+				<font color = "red">#{formController.user.email}</font>
+			</p>
+			<p>
+				Address:
+				<h:inputText value="#{user.address}" />
+				<font color = "red">#{formController.user.address}</font>
+			</p>
+			<p>
+				Phone Number:
+				<h:inputText value="#{user.phoneNumber}" />
+				<font color = "red">#{formController.user.phoneNumber}</font>
+			</p>
+			<p>
+				Username:
+				<h:inputText value="#{user.username}" />
+				<font color = "red">#{formController.user.username}</font>
+			</p>
+			<p>
+				Password:
+				<h:inputText value="#{user.password}" />
+				<font color = "red">#{formController.user.password}</font>
+			</p>
+			<h:commandButton action="#{formController.onSubmit()}" value="Submit" />
+			<h:commandButton action="Login.xhtml" value="Back" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+	</body>
+
+
+
+</html>
