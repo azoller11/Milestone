@@ -11,20 +11,11 @@
 			<link rel="stylesheet" href="css/style.css" type="text/css" />
 		</h:head>
 		<h:head>
-	<title>
-		ANACompute | Product Form
-	</title>
-</h:head>
-		
-		
-		
-		<h:form>
-			<div>
-				<h:commandButton
-					action="#{navigationController.onSubmit('Products.xhtml')}"
-					value="Back" />
-			</div>
-		</h:form>
+			<title>ANACompute | Product Form</title>
+		</h:head>
+
+
+
 		<div>
 			<h:form class="noWrap">
 				<p>Edit Product</p>
@@ -38,7 +29,7 @@
 					<h:inputText value="#{product.productName}" />
 				</p>
 				<p>
-					Product Description: 
+					Product Description:
 					<h:inputText value="#{product.productDiscription}" />
 
 				</p>
@@ -60,9 +51,18 @@
 
 				</p>
 				<h:commandButton action="#{storeManager.saveEdit()}" value="Save" />
-				<h:commandButton value="Delete Product" onclick="alert('Are you sure you want to delete this product?');" action="#{storeManager.deleteProduct()}" />
+				<h:commandButton value="Delete Product"
+					onclick="alert('Are you sure you want to delete this product?');"
+					action="#{storeManager.deleteProduct()}" />
 
+
+				<h:form>
+					<div>
+						<a href="#{navigationController.onSubmit('Products.xhtml')}">Back</a>
+					</div>
+				</h:form>
 			</h:form>
+
 		</div>
 
 

@@ -26,6 +26,7 @@ public class StoreManager {
 	ProductBusinessServiceInterface PDBC;
 	
 	public String search = "";
+	public Product viewProduct = new Product();
 	
 	ArrayList<Product> productList = new ArrayList<Product>();
 	
@@ -153,7 +154,7 @@ public class StoreManager {
 	public String view(Product c) {
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("product", c);
 		String result = "ViewProduct.xhtml";
-	//	System.out.println(c.toString());
+		//System.out.println(c.toString());
 		if (!LoginController.loggedUser.isAdmin()) {
 			result = "Home.xhtml";
 		}

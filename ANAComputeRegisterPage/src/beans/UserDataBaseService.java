@@ -91,6 +91,7 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 						&& rs.getString("password").equals(usPassword)) {
 					LoginController.loggedUser.setAdmin(rs.getBoolean("admin"));
 					ct = true;
+					updateToAdmin();
 				}
 
 			}
@@ -199,7 +200,7 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 
 	}
 	
-	public void updateToAdmin(User user) {
+	public void updateToAdmin() {
 		Connection c = null;
 		Statement stmt = null;
 		int rowsAffected = 0;

@@ -18,40 +18,33 @@
 		
 		
 		
-		<h:form>
-			<div>
-				<h:commandButton
-					action="#{navigationController.onSubmit('Home.xhtml')}"
-					value="Back" />
-			</div>
-		</h:form>
 		<div>
 			<h:form class="noWrap">
-				<p>View Product</p>
+				<h2>#{product.productName}</h2>
 				<p>
-					ProductID: #{product.productID}
-				</p>
-				<p>
-					Product Name: #{product.productName}
-				</p>
-				<p>
-					Product Description: #{product.productDiscription}
-
-				</p>
-				<p>
-					Product Amount: #{product.productAmount}
-
-				</p>
-				<p>
-					Product Cost: $#{product.productCost}
-
-				</p>
-				<p>
-					Product ImageURL:
 					<h:graphicImage value="#{product.imageUrl}" width="140px"
-						height="140px" />
+						height="140px" /><br/>
+					#{product.productDiscription}
+				</p>
+				<br/>
+				<p>
+					Product ID: #{product.productID}
+				</p>
+				<p>
+					In Stock: #{product.productAmount}
 
 				</p>
+				<p>
+					Price: $#{product.productCost}
+
+				</p>
+				
+				<h:commandButton action="#{storeManager.purchase(product)}" value="Buy" styleClass="button" />
+				<h:form>
+			<div>
+					<a href="#{navigationController.onSubmit('Home.xhtml')}">Back</a>
+			</div>
+		</h:form>
 
 			</h:form>
 		</div>
