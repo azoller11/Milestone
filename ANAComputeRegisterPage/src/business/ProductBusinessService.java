@@ -43,6 +43,23 @@ public class ProductBusinessService implements ProductBusinessServiceInterface {
 		dp.addProduct(pd);
 		
 	}
+
+	@Override
+	public void editProduct(Product pd) {
+		dp.editProduct(pd);
+		
+	}
+
+	@Override
+	public void deleteProduct(Product pd) {
+		dp.deleteProduct(pd);
+		
+	}
+
+	@Override
+	public Product findById(int id) {
+		return dp.findById(id);
+	}
 	
 	
 

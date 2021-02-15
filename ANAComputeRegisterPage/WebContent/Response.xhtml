@@ -14,24 +14,29 @@
 
 <body>
 	<ui:composition template="/layouts/commonLayouts.xhtml">
-	
-	<ui:define name="content">
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
-	<h:form class="noWrap">
-		<p>First Name: #{user.firstName}</p>
-		<p>Last Name: #{user.lastName}</p>
-		<p>Email: #{user.email}</p>
-		<p>Address: #{user.address}</p>
-		<p>Phone Number: #{user.phoneNumber}</p>
-		<p>Username: #{user.username}</p>
-		<p>Password: #{user.password}</p>
-		<h:commandButton action="CreateAccount.xhtml"
-			value="Back" />
-		<h:commandButton action="#{registerConfirmController.onSubmit()}"
-			value="Submit" />
-		<h:messages />
 
-	</h:form>
+		<ui:define name="content">
+			<link rel="stylesheet" type="text/css" href="css/style.css"
+				media="all" />
+
+			<h:head>
+				<title>ANACompute | Create Account Confirm</title>
+			</h:head>
+
+			<h:form class="noWrap">
+				<p>First Name: #{user.firstName}</p>
+				<p>Last Name: #{user.lastName}</p>
+				<p>Email: #{user.email}</p>
+				<p>Address: #{user.address}</p>
+				<p>Phone Number: #{user.phoneNumber}</p>
+				<p>Username: #{user.username}</p>
+				<p>Password: #{user.password}</p>
+				<h:commandButton action="CreateAccount.xhtml" value="Back" />
+				<h:commandButton action="#{registerConfirmController.onSubmit()}"
+					value="Submit" />
+				<h:messages />
+
+			</h:form>
 		</ui:define>
 
 

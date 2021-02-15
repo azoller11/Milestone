@@ -28,7 +28,7 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 	
 	
 	// Connect to databases
-	public String dbURL = "jdbc:mysql://localhost:3306/anacompute";
+	public String dbURL = "jdbc:mysql://localhost:3306/anacompute?autoReconnect=true&useSSL=false";
 	public String username = "root";
 	public String password = "root";
 	
@@ -61,7 +61,7 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 		}
 
 		
-		System.out.println("SUCCESS!! Rows affected " + rowsAffected);
+		//System.out.println("SUCCESS!! Rows affected " + rowsAffected);
 		try {
 			c.close();
 			stmt.close();
@@ -178,7 +178,7 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 			rowsAffected = stmt.executeUpdate();
 
 			// process the rows effected
-			System.out.println("Rows affected " + rowsAffected);
+			//System.out.println("Rows affected " + rowsAffected);
 
 		} catch (SQLException e) {
 			System.out.println("Connection unsuccessful!");
@@ -207,9 +207,9 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 		try {
 			//Connect to database
 			c = DriverManager.getConnection(dbURL, username, password);
-			System.out.println("Connection successful!");
-			System.out.println("Connected to : " + dbURL);
-			
+		//	System.out.println("Connection successful!");
+		///	System.out.println("Connected to : " + dbURL);
+		//	
 			
 			
 			// create a SQL statement 
@@ -218,7 +218,7 @@ public class UserDataBaseService  implements UserDataBaseInterface {
 			rowsAffected = stmt.executeUpdate("update anacompute.user set admin = '1' where admin = '0'");
 			
 			// process the rows effected
-			System.out.println("Rows affected " + rowsAffected);
+			//System.out.println("Rows affected " + rowsAffected);
 			
 			
 			

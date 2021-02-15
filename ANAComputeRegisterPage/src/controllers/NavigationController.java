@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 public class NavigationController {
 	
 	public String onSubmit(String desiredLocation) {
-		if (getLoggedName() == null) {
+		if (getLoggedName() == null || getLoggedName() == "Not Logged In") {
 			desiredLocation = "Login.xhtml";
 		}
 		return desiredLocation;
@@ -17,13 +17,13 @@ public class NavigationController {
 		if (LoginController.loggedUser.isAdmin() == false) {
 			desiredLocation = "Home.xhtml";
 		}
-		System.out.println("Send to " + desiredLocation);
+		//System.out.println("Send to " + desiredLocation);
 		return desiredLocation;
 	}
 	
 	
 	public String getLoggedName() {
-		System.out.println(LoginController.loggedUser.getUsername());
+		//System.out.println(LoginController.loggedUser.getUsername());
 		String sendUsernName = "Not Logged In";
 		if (LoginController.loggedUser.getUsername() != null && LoginController.loggedUser.getUsername() != "") {
 			sendUsernName = LoginController.loggedUser.getUsername();

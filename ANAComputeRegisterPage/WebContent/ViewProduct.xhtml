@@ -21,46 +21,37 @@
 		<h:form>
 			<div>
 				<h:commandButton
-					action="#{navigationController.onSubmit('Products.xhtml')}"
+					action="#{navigationController.onSubmit('Home.xhtml')}"
 					value="Back" />
 			</div>
 		</h:form>
 		<div>
 			<h:form class="noWrap">
-				<p>Edit Product</p>
-				<p>#{product.toString()}</p>
+				<p>View Product</p>
 				<p>
 					ProductID: #{product.productID}
-					<h:inputText value="#{product.productID}" />
 				</p>
 				<p>
-					Product Name:
-					<h:inputText value="#{product.productName}" />
+					Product Name: #{product.productName}
 				</p>
 				<p>
-					Product Description: 
-					<h:inputText value="#{product.productDiscription}" />
+					Product Description: #{product.productDiscription}
 
 				</p>
 				<p>
-					Product Amount
-					<h:inputText value="#{product.productAmount}" />
+					Product Amount: #{product.productAmount}
 
 				</p>
 				<p>
-					Product Cost
-					<h:inputText value="#{product.productCost}" />
+					Product Cost: $#{product.productCost}
 
 				</p>
 				<p>
-					Product ImageURL
-					<h:inputText value="#{product.imageUrl}" />
-					<h:graphicImage value="#{product.imageUrl}" width="70px"
-						height="70px" />
+					Product ImageURL:
+					<h:graphicImage value="#{product.imageUrl}" width="140px"
+						height="140px" />
 
 				</p>
-				<h:commandButton action="#{storeManager.saveEdit()}" value="Save" />
-				<h:commandButton value="Delete Product" onclick="alert('Are you sure you want to delete this product?');" action="#{storeManager.deleteProduct()}" />
 
 			</h:form>
 		</div>

@@ -22,15 +22,80 @@ import java.sql.Statement;
 @Alternative
 public class ProductDataBaseService implements ProductDataBaseInterface{
 	
+	String dbURL = "jdbc:mysql://localhost:3306/anacompute?autoReconnect=true&useSSL=false";
+	String username = "root";
+	String password = "root";
 	
+	
+	@Override
+	public void deleteProduct(Product pd) {
+		Connection c = null;
+		Statement stmt = null;
+		int rowsAffected = 0;
+		try {
+			//System.out.println("ABOUT TO DELETE: " + pd.toString());
+			//getID will identify which product you want to edit;
+			c = DriverManager.getConnection(dbURL, username, password);
+			//c.prepareStatement("delete from anacompute.product where id = ?");
+			stmt = c.createStatement();
+			rowsAffected = stmt.executeUpdate("delete from anacompute.product where productID = "+ pd.getProductID());
+			System.out.println("Rows affected: " + rowsAffected);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			c.close();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	@Override
+	public void editProduct(Product pd) {
+		Connection c = null;
+		PreparedStatement stmt = null;
+		int rowsAffected = 0;
+		
+		try {
+			//getID will identify which product you want to edit;
+			
+			c = DriverManager.getConnection(dbURL, username, password);
+			stmt = c.prepareStatement("update anacompute.product set productName = ?, productDiscription = ?, productAmount = ?, productCost = ?, imageUrl = ? where productID = ?");
+			
+			stmt.setString(1, pd.getProductName());
+			stmt.setString(2, pd.getProductDiscription());
+			stmt.setInt(3, pd.getProductAmount());
+			stmt.setDouble(4, pd.getProductCost());
+			stmt.setString(5, pd.getImageUrl());
+			stmt.setInt(6, pd.getProductID());
+			rowsAffected = stmt.executeUpdate();
+			//System.out.println("Rows affected: " + rowsAffected);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			c.close();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 	
 	
 	public void addProduct(Product pd) {
-		System.out.println("Created a new product: " + pd.toString());
+		//System.out.println("Created a new product: " + pd.toString());
 		// Connect to database
-		String dbURL = "jdbc:mysql://localhost:3306/anacompute";
-		String username = "root";
-		String password = "root";
+		
 		Connection c = null;
 		PreparedStatement stmt = null;
 		int rowsAffected = 0;
@@ -55,7 +120,7 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 		}
 
 		
-		System.out.println("SUCCESS!! Rows affected " + rowsAffected);
+		//System.out.println("SUCCESS!! Rows affected " + rowsAffected);
 		try {
 			c.close();
 			stmt.close();
@@ -75,11 +140,6 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 	
 	
 	public void decreaseOne(Product pd) {
-		// Connect to database
-		String dbURL = "jdbc:mysql://localhost:3306/anacompute";
-		String username = "root";
-		String password = "root";
-
 		Connection c = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -95,7 +155,7 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 			String prep = "update anacompute.product set productAmount = '" + (pd.getProductAmount() - 1)+"' where productID = '" + pd.getProductID() +"'" ;
 			rowsAffected = stmt.executeUpdate(prep);
 
-			System.out.println(pd.toString());
+			//System.out.println(pd.toString());
 		
 			
 			
@@ -125,11 +185,6 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 
 	public boolean checkProduct(Product pd) {
 		boolean ct = false;
-		// Connect to database
-		String dbURL = "jdbc:mysql://localhost:3306/anacompute";
-		String username = "root";
-		String password = "root";
-
 		Connection c = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -149,11 +204,11 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 				if (rs.getInt("productID") == pd.getProductID()) {
 					if (rs.getInt("productAmount") > 0) {
 						//In Stock!
-						System.out.println("This item is in stock!");
+						//System.out.println("This item is in stock!");
 						decreaseOne(pd);
 					} else {
 						//Out of stock :(
-						System.out.println("This item is out of stock!");
+						//System.out.println("This item is out of stock!");
 					}
 				}
 
@@ -179,11 +234,6 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 	}
 
 	public ArrayList<Product> readAllProducts() {
-		// Connect to database
-		String dbURL = "jdbc:mysql://localhost:3306/anacompute";
-		String username = "root";
-		String password = "root";
-
 		Connection c = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -236,5 +286,24 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 		
 		return p;
 	}
+
+
+	
+	
+	public Product findById(int id) {
+		ArrayList<Product> ap = readAllProducts();
+		Product found = new Product();
+		for (Product tp : ap) {
+			if (tp.getProductID() == id) {
+				found = tp;
+			}
+		}
+		return found;
+	}
+
+
+
+
+
 
 }

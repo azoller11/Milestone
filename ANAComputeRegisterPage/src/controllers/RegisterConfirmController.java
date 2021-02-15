@@ -24,7 +24,7 @@ public class RegisterConfirmController {
 				
 				// Send the information to the POST request
 				FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", user);
-				System.out.println("You clicked the submit button. Sending information to the database!" + registerUser.toString());
+				//System.out.println("You clicked the submit button. Sending information to the database!" + registerUser.toString());
 				
 				
 				

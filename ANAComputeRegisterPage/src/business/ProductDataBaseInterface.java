@@ -19,4 +19,10 @@ public interface ProductDataBaseInterface {
 	
 	public void addProduct(Product pd);
 	
+	public void editProduct(Product pd);
+	
+	public void deleteProduct(Product pd);
+
+	public Product findById(int id);
+	
 }

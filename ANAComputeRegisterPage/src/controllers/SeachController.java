@@ -8,10 +8,10 @@ public class SeachController {
 	
 	String pageSearch;
 	
-	public void OnSubmit(String search) {
+	public void OnSubmit() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		
-		System.out.println("You searched: " + search);
+		System.out.println("You searched: " + context.toString());
 	}
 
 }

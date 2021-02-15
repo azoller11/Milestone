@@ -20,9 +20,16 @@ public interface ProductBusinessServiceInterface {
 	
 	public boolean checkProduct(Product pd);
 	
-	public ArrayList<Product> readAllProducts();
-	
 	public void addProduct(Product pd);
+	
+	//To Comply with CRUD we need (find by id, find all, update, and delete methods of CRUD) 
+	
+	public void editProduct(Product pd); //Update
+	
+	public void deleteProduct(Product pd); //Delete
+	
+	public ArrayList<Product> readAllProducts(); // Find by ID... But, could we just use this and then check if the returned list has the desired product? if (gottenProdect().getID() == ID)
 
+	public Product findById(int id);
 
 }

@@ -10,33 +10,38 @@
 	<ui:define name="content">
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 
-		<h:form class="searchHeader">
-			<h:inputText value="" />
-			<h:commandButton action="Home.xhtml" value="Search" />
+		<h:head>
+			<title>ANACompute | Home</title>
+		</h:head>
+
+
+		<h:form class="searchHeader" id="seach">
+			<h:inputText binding="#{input1}" />
+			<h:commandButton value="Search"
+				action="#{storeManager.executeSearch(input1.value)}" />
 		</h:form>
-		<h:form class="searchHeader">
-				<h:commandButton
-					action="#{navigationController.adminOnSubmit('CreateProduct.xhtml')}"
-					value="Create New Product" />
-			</h:form>
 		<body>
-		
-			
-			<h:dataTable value="#{storeManager.allProducts}" var="o">
+
+
+			<h:dataTable value="#{storeManager.productList}" var="o">
 				<h:column class="col1">
 					<div class="card">
 
 						<f:facet name="header"></f:facet>
-						<h:graphicImage value="#{o.imageUrl}" width="70px" height="70px" />
+						<h:graphicImage value="#{o.imageUrl}" width="100px" height="100px" />
 						<h1>#{o.productName}</h1>
 						<p>$#{o.productCost} There are #{o.productAmount} in stock!</p>
 						<p>#{o.productDiscription}</p>
 						<h:form>
 							<p>
-							<h:commandButton action="#{storeManager.purchase(o)}"
-									value="Buy" styleClass= "button"/>
-									
+								<h:commandButton action="#{storeManager.purchase(o)}"
+									value="Buy" styleClass="button" />
+
+
+								<h:commandButton action="#{storeManager.view(o)}" value="View" />
+
 							</p>
+							<p></p>
 						</h:form>
 					</div>
 				</h:column>

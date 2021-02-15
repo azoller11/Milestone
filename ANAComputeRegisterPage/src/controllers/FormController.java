@@ -17,7 +17,7 @@ public class FormController {
 		FacesContext context = FacesContext.getCurrentInstance();
 		User user = context.getApplication().evaluateExpressionGet(context, "#{user}", User.class);
 		
-		System.out.println("You clicked the submit button: " + user.toString());
+		//System.out.println("You clicked the submit button: " + user.toString());
 		
 		// Send the information to the POST request
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", user);

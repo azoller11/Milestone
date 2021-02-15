@@ -28,7 +28,7 @@ public class LoginController {
 
 		// Send the information to the POST request
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", user);
-		System.out.println("You clicked the submit button. Sending information to the database!" + user.getUsername() + " " + user.getPassword());
+		//System.out.println("You clicked the submit button. Sending information to the database!" + user.getUsername() + " " + user.getPassword());
 		
 		
 			boolean check = UDBC.check(user.getUsername(), user.getPassword());
@@ -38,7 +38,7 @@ public class LoginController {
 			} else {
 				decided = incorrect;
 				attempts--;
-				System.out.println(attempts);
+				//System.out.println(attempts);
 				if (attempts < 0) {
 					decided = register;
 					attempts = 3;

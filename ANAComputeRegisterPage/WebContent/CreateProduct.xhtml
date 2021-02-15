@@ -10,7 +10,13 @@
 		<h:head>
 			<link rel="stylesheet" href="css/style.css" type="text/css" />
 		</h:head>
-		<h:form>
+		<h:head>
+			<title>ANACompute | Create Product</title>
+		</h:head>
+
+
+
+		<h:form> 
 			<div>
 				<h:commandButton
 					action="#{navigationController.onSubmit('Home.xhtml')}"
@@ -23,7 +29,7 @@
 				<p>
 					Product Name:
 					<h:inputText value="#{product.productName}" />
-					
+
 				</p>
 				<p>
 					Product Description:
@@ -45,8 +51,7 @@
 					<h:graphicImage value="" width="70px" height="70px" />
 
 				</p>
-				<h:commandButton
-					action="#{storeManager.CreateNewProduct()}"
+				<h:commandButton action="#{storeManager.CreateNewProduct()}"
 					value="Save" />
 
 			</h:form>
