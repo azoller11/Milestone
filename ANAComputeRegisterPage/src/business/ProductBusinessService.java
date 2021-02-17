@@ -60,6 +60,11 @@ public class ProductBusinessService implements ProductBusinessServiceInterface {
 	public Product findById(int id) {
 		return dp.findById(id);
 	}
+
+	@Override
+	public ArrayList<Product> searchFor(String name) {
+		return dp.searchFor(name);
+	}
 	
 	
 

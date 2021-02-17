@@ -16,6 +16,7 @@ import beans.Product;
 import beans.ProductDataBaseService;
 import beans.User;
 import business.ProductBusinessServiceInterface;
+import business.ProductRestService;
 
 @ManagedBean
 public class StoreManager {
@@ -24,6 +25,9 @@ public class StoreManager {
 
 	@Inject
 	ProductBusinessServiceInterface PDBC;
+	
+	ProductRestService PRS;
+	
 
 	public NavigationController NC = new NavigationController();
 

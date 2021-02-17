@@ -302,6 +302,22 @@ public class ProductDataBaseService implements ProductDataBaseInterface{
 	}
 
 
+	@Override
+	public ArrayList<Product> searchFor(String name) {
+		ArrayList<Product> productPool = new ArrayList<Product>();
+		for (Product ap : getAllProducts()) {
+			if (ap.getProductName().contains(name)) {
+				productPool.add(ap);
+			} else if (ap.getProductDiscription().contains(name)) {
+				productPool.add(ap);
+			} else if (ap.getImageUrl().contains(name)) {
+				productPool.add(ap);
+			}
+		}
+		return productPool;
+	}
+
+
 
 
 
