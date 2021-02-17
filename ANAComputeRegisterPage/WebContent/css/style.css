@@ -1,101 +1,114 @@
 @charset "ISO-8859-1";
-@font-face{
-	 font-family: aquire;
-	 src: url("Aquire-BW0ox.otf");
+
+@font-face {
+	font-family: aquire;
+	src: url("Aquire-BW0ox.otf");
 }
 
+.footer {
+	white-space: nowrap;
+	top: 88%;
+}
 
 .commonButton {
 	
 }
 
-.order-table{   
-    border-collapse:collapse;
+.order-table {
+	border-collapse: collapse;
 }
 
-.order-table-header{
-    text-align:center;
-    background:none repeat scroll 0 0 #E5E5E5;
-    border-bottom:1px solid #BBBBBB;
-    padding:16px;
+.order-table-header {
+	text-align: center;
+	background: none repeat scroll 0 0 #E5E5E5;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 16px;
 }
 
-.order-table-odd-row{
-    text-align:center;
-    background:none repeat scroll 0 0 #FFFFFFF;
-    border-top:1px solid #BBBBBB;
+.order-table-odd-row {
+	text-align: center;
+	background: none repeat scroll 0 0 #FFFFFFF;
+	border-top: 1px solid #BBBBBB;
 }
 
-.order-table-even-row{
-    text-align:center;
-    background:none repeat scroll 0 0 #F9F9F9;
-    border-top:1px solid #BBBBBB;
+.order-table-even-row {
+	text-align: center;
+	background: none repeat scroll 0 0 #F9F9F9;
+	border-top: 1px solid #BBBBBB;
 }
-.navigation{
+
+.navigation {
 	display: flex;
 	align-items: center;
 	padding: 10px;
 	font-family: aquire;
-	margin:20;
+	margin: 20;
 	padding: 10;
 	box-sizing: border-box;
 	font-family: aquire;
 	white-space: nowrap;
 }
-nav.navigation{
+
+nav.navigation {
 	flex: 1;
 	text-align: center;
 	white-space: nowrap;
 }
-nav ul{
+
+nav ul {
 	display: inline-block;
 	list-style-type: none;
 }
-nav ul li{
+
+nav ul li {
 	display: inline-block;
 	margin-right: 10px;
 	padding: 20px;
 }
-a{
+
+a {
 	text-decoration: none;
 	font-size: 30px;
 }
+
 a:hover {
-  background-color: #000;
-  color: lightgrey;
+	background-color: #000;
+	color: lightgrey;
 }
+
 .col1 {
-  float: right;
-  width: 25%;
-  white-space: nowrap;
+	float: right;
+	width: 25%;
+	white-space: nowrap;
 }
+
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 600px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
 }
 
 .price {
-  color: grey;
-  font-size: 22px;
+	color: grey;
+	font-size: 22px;
 }
 
 .card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
 }
 
 .card button:hover {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 body {
@@ -108,34 +121,33 @@ body {
 .searchHeader {
 	white-space: nowrap;
 	top: 18%;
-  	text-align: center;
+	text-align: center;
 }
 
 .loginHeader {
 	white-space: nowrap;
 	position: absolute;
 	top: 01%;
-  	left: 70%;
+	left: 70%;
 }
 
 .noWrap {
 	white-space: nowrap;
 	position: absolute;
 	top: 170px;
-  	left: 10%;
+	left: 10%;
 }
 
 .bottom {
-	white-space: nowrap;
-	top: 100%;
-  	left: 00%;
+	display: flex;
+	height: 100%;
 }
 
 .some_class {
 	height: 75px;
 	width: 250px;
 	background-image: url('ANACompute.png');
-	background-color: rgba(0, 0, 0, 0.0); 
+	background-color: rgba(0, 0, 0, 0.0);
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: none;

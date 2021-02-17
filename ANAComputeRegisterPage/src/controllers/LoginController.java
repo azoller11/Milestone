@@ -17,9 +17,9 @@ public class LoginController {
     
     int attempts = 3;
 	public String onSubmit() {
-		String register = "CreateAccount.xhtml";
-		String success = "Home.xhtml";
-		String incorrect = "Login.xhtml";
+		String register = "CreateAccount.xhtml?faces-redirect=true";
+		String success = "Home.xhtml?faces-redirect=true";
+		String incorrect = "Login.xhtml?faces-redirect=true";
 		String decided = "";
 		//Get the user value from the input form;
 		FacesContext context = FacesContext.getCurrentInstance();

@@ -8,14 +8,14 @@ public class NavigationController {
 	
 	public String onSubmit(String desiredLocation) {
 		if (getLoggedName() == null || getLoggedName() == "Not Logged In") {
-			desiredLocation = "Login.xhtml";
+			desiredLocation = "Login.xhtml?faces-redirect=true";
 		}
 		return desiredLocation;
 	}
 	
 	public String adminOnSubmit(String desiredLocation) {
 		if (LoginController.loggedUser.isAdmin() == false) {
-			desiredLocation = "Home.xhtml";
+			desiredLocation = "Home.xhtml?faces-redirect=true";
 		}
 		//System.out.println("Send to " + desiredLocation);
 		return desiredLocation;
