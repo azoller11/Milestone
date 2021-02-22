@@ -6,8 +6,6 @@ import javax.validation.constraints.Size;
 
 @ManagedBean
 public class User {
-	// @NotNull()
-//	@Size(min=5, max=15) 
 	private String firstName;
 	private String lastName;
 	private String Email;
@@ -17,19 +15,7 @@ public class User {
 	private String password;
 	private boolean admin;
 
-	public User() {
-	}
-
-	public User(String firstName, String lastName, String Email, String Address, String phoneNumber, String username,
-			String password) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.Email = Email;
-		this.Address = Address;
-		this.phoneNumber = phoneNumber;
-		this.username = username;
-		this.password = password;
-	}
+	public User() {}
 
 	public User(String firstName, String lastName, String Email, String Address, String phoneNumber, String username,
 			String password, boolean admin) {
