@@ -8,9 +8,11 @@
 <ui:composition template="/layouts/commonLayouts.xhtml">
 
 	<ui:define name="content">
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+
 
 		<h:head>
+		<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 			<title>ANACompute | Home</title>
 		</h:head>
 
@@ -38,7 +40,7 @@
 									value="Buy" styleClass="button" />
 
 
-							</p>
+							</p> 
 							<p>
 								<h:commandButton action="#{storeManager.view(o)}"
 									value="View"></h:commandButton>
