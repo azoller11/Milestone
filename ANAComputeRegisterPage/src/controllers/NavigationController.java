@@ -2,6 +2,8 @@ package controllers;
 
 import javax.faces.bean.ManagedBean;
 
+import beans.User;
+
 
 @ManagedBean
 public class NavigationController {
@@ -14,7 +16,7 @@ public class NavigationController {
 	}
 	
 	public String adminOnSubmit(String desiredLocation) {
-		if (LoginController.loggedUser.isAdmin() == false) {
+		if (getLoggedUser().isAdmin() == false) {
 			desiredLocation = "Home.xhtml?faces-redirect=true";
 		}
 		//System.out.println("Send to " + desiredLocation);
@@ -30,6 +32,10 @@ public class NavigationController {
 			return "Logged in as: " + sendUsernName;
 		} 
 		return sendUsernName;
+	}
+	
+	public User getLoggedUser() {
+		return LoginController.loggedUser;
 	}
 
 }

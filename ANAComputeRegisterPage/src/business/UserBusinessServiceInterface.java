@@ -21,5 +21,6 @@ public interface UserBusinessServiceInterface {
 	
 	public void deleteUser(User user);
 	
+	public User getUserInformation(String username);
 	
 }

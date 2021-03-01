@@ -15,5 +15,7 @@ public interface UserDataBaseInterface {
 	
 	public void deleteUser(User user);
 	
+	public User getUserInformation(String username);
+	
 
 }

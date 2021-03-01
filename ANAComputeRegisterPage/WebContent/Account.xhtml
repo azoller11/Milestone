@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<head>
+
+</head>
+
+
+
+<body>
+	<ui:composition template="/layouts/commonLayouts.xhtml">
+
+		<ui:define name="content">
+			<link rel="stylesheet" type="text/css" href="css/style.css"
+				media="all" />
+
+			<h:head>
+				<title>ANACompute | My Account</title>
+			</h:head>
+
+			<h:form class="noWrap">
+				<p>First Name: #{navigationController.loggedUser.firstName}</p>
+				<p>Last Name: #{navigationController.loggedUser.lastName}</p>
+				<p>Email: #{navigationController.loggedUser.email}</p>
+				<p>Address: #{navigationController.loggedUser.address}</p>
+				<p>Phone Number: #{navigationController.loggedUser.phoneNumber}</p>
+				<p>Username: #{navigationController.loggedUser.username}</p>
+				<p>Admin: #{navigationController.loggedUser.admin}</p>
+				<h:commandButton action="Home.xhtml" value="Home" />
+				<h:messages />
+
+			</h:form>
+		</ui:define>
+
+
+	</ui:composition>
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

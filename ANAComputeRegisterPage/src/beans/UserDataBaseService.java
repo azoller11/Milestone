@@ -230,7 +230,7 @@ public class UserDataBaseService implements UserDataBaseInterface {
 		User nu = new User();
 
 		try {
-			c = DriverManager.getConnection(dbURL, username, password);
+			c = DriverManager.getConnection(dbURL, this.username, password);
 			// create a SQL statement
 			stmt = c.createStatement();
 			// execute the statemant
@@ -246,8 +246,12 @@ public class UserDataBaseService implements UserDataBaseInterface {
 					nu.setPhoneNumber(rs.getString("phoneNumber"));
 					nu.setUsername(rs.getString("username"));
 					nu.setPassword(rs.getString("password"));
-					nu.setAdmin(Boolean.parseBoolean(rs.getString("admin")));
-
+					if (Integer.parseInt(rs.getString("admin")) == 1) {
+						nu.setAdmin(true);
+					} else {
+						nu.setAdmin(false);
+					}
+					
 				}
 				// System.out.println(rs.getString("username"));
 			}

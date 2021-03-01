@@ -34,6 +34,7 @@ public class LoginController {
 			boolean check = UDBC.check(user.getUsername(), user.getPassword());
 			if (check) {
 				loggedUser.setUsername(user.getUsername());
+				setAccount();
 				decided = success;
 			} else {
 				decided = incorrect;
@@ -48,5 +49,11 @@ public class LoginController {
 		
 		return decided;
 	}
+	
+	public void setAccount() {
+		loggedUser = UDBC.getUserInformation(loggedUser.getUsername());
+	}
+	
+	
 
 }

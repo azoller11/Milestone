@@ -38,4 +38,9 @@ public class UserBusinessService implements UserBusinessServiceInterface{
 		
 	}
 
+	@Override
+	public User getUserInformation(String username) {
+		return db.getUserInformation(username);
+	}
+
 }
